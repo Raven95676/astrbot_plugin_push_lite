@@ -74,6 +74,10 @@ class PushAPIServer:
             params_form = await request.get_data(as_text=True)
             params = parse_qs(params_form)
             data = {k: v[0] for k, v in params.items()}
+            # Merge URL query parameters; body parameters take precedence
+            for k, v in request.args.to_dict().items():
+                if k not in data:
+                    data[k] = v
             if not data:
                 abort(400, description="无效的 Form Data")
 
