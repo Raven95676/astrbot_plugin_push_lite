@@ -17,7 +17,7 @@ from astrbot.core.message.message_event_result import MessageChain
 from .api import run_server  # type: ignore
 
 
-@register("astrbot_plugin_push_lite", "Raven95676", "Astrbot轻量级推送插件", "0.2.1")
+@register("astrbot_plugin_push_lite", "Raven95676", "Astrbot轻量级推送插件", "0.2.2")
 class PushLite(Star):
     def __init__(self, context: Context, config: AstrBotConfig):
         super().__init__(context)
